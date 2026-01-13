@@ -1,0 +1,13 @@
+# .NET build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
