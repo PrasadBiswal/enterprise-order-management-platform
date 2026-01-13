@@ -1,0 +1,16 @@
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\bin\Debug\net8.0\Enterprise.OrderManagement.Application.deps.json
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\bin\Debug\net8.0\Enterprise.OrderManagement.Application.dll
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\bin\Debug\net8.0\Enterprise.OrderManagement.Application.pdb
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\bin\Debug\net8.0\Enterprise.OrderManagement.Domain.dll
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\bin\Debug\net8.0\Enterprise.OrderManagement.Domain.pdb
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\Enterprise.OrderManagement.Application.csproj.AssemblyReference.cache
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\Enterprise.OrderManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\Enterprise.OrderManagement.Application.AssemblyInfoInputs.cache
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\Enterprise.OrderManagement.Application.AssemblyInfo.cs
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\Enterprise.OrderManagement.Application.csproj.CoreCompileInputs.cache
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\Enterprise.OrderManagement.Application.sourcelink.json
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\Enterpri.11B400EF.Up2Date
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\Enterprise.OrderManagement.Application.dll
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\refint\Enterprise.OrderManagement.Application.dll
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\Enterprise.OrderManagement.Application.pdb
+C:\DEV\enterprise-order-management-platform\src\Enterprise.OrderManagement.Application\obj\Debug\net8.0\ref\Enterprise.OrderManagement.Application.dll
