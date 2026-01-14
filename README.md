@@ -19,5 +19,21 @@ This project simulates a real-world enterprise backend system used for managing 
 - Azure SQL (later phases)
 - Azure Application Insights
 
+## Business Context
+
+The Enterprise Order Management Platform is responsible for managing the lifecycle of customer orders in a distributed enterprise environment.
+
+### Core Responsibilities
+- Accept and validate customer orders
+- Maintain order state throughout its lifecycle
+- Calculate order totals
+- Ensure consistency of business rules
+- Expose order data to downstream systems
+
+### Non-Responsibilities
+- Payment processing (handled by a separate system)
+- Inventory reservation (external service)
+- User authentication (enterprise identity provider)
 ## Status
-🚧 In Progress — Phase 1: Repository & Architecture Setup
+🚧 In Progress — Phase 2: Domain & Application and Infra Setup
+
