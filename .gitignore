@@ -1,13 +1,11 @@
-# .NET build outputs
+# Build outputs
 bin/
 obj/
 
 # Visual Studio
 .vs/
-
-# Rider
-.idea/
-
-# OS files
-Thumbs.db
-.DS_Store
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
