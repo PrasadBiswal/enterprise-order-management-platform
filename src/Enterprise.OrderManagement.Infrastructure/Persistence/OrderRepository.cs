@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Enterprise.OrderManagement.Application.Interfaces;
 using Enterprise.OrderManagement.Domain.Entities;
 
@@ -10,7 +11,7 @@ public sealed class OrderRepository : IOrderRepository
 	{
 		_dbContext = dbContext;
 	}
-	public async Task AddAsync( Order order, CancellationToken CancellationToken cancellationToken = default)
+	public async Task AddAsync( Order order, CancellationToken cancellationToken = default)
 	{
 
 		await _dbContext.Orders.AddAsync(order, cancellationToken);
