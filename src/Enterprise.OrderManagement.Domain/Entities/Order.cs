@@ -12,6 +12,10 @@ public sealed class Order
     public OrderStatus Status { get; private set; }
 
     public IReadOnlyCollection<OrderItem> Items => _items.AsReadOnly();
+    private Order()
+    {
+
+    }
 
     public Order(Guid customerId)
     {

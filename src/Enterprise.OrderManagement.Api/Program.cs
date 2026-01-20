@@ -1,13 +1,37 @@
+﻿using Enterprise.OrderManagement.Application.Handlers;
+using Enterprise.OrderManagement.Application.Interfaces;
+using Enterprise.OrderManagement.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// --------------------
+// Add services
+// --------------------
+
+// Controllers (MANDATORY for controller-based APIs)
+builder.Services.AddControllers();
+
+// Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// EF Core (InMemory for now)
+builder.Services.AddDbContext<OrderManagementDbContext>(options =>
+{
+    options.UseInMemoryDatabase("OrderManagementDb");
+});
+
+// Dependency Injection
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<CreateOrderHandler>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// --------------------
+// Configure middleware
+// --------------------
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -16,29 +40,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+app.UseAuthorization();
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+// 🔴 THIS IS WHAT YOU WERE MISSING
+app.MapControllers();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
