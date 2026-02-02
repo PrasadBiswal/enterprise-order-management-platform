@@ -29,12 +29,14 @@ public sealed class Order
 
     public void AddItem(OrderItem item)
     {
+        if (item is null)
+            throw new ArgumentNullException(nameof(item));
+
         if (Status != OrderStatus.Draft)
             throw new InvalidOperationException("Cannot modify order once submitted.");
 
         _items.Add(item);
     }
-
     public Money CalculateTotal(string currency)
     {
         if (!_items.Any())

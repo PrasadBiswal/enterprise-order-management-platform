@@ -1,24 +1,34 @@
-using Enterprise.OrderManagement.Domain.ValueObjects;
+﻿using Enterprise.OrderManagement.Domain.ValueObjects;
 
 namespace Enterprise.OrderManagement.Domain.Entities;
 
 public sealed class OrderItem
 {
-    public Guid ProductId { get; }
-    public int Quantity { get; }
-    public Money UnitPrice { get; }
+    public Guid Id { get; private set; }
+    public Guid ProductId { get; private set; }
+    public int Quantity { get; private set; }
+    public Money UnitPrice { get; private set; } = null!;
+
+    private OrderItem()
+    {
+        // Required by EF Core
+    }
 
     public OrderItem(Guid productId, int quantity, Money unitPrice)
     {
+        if (productId == Guid.Empty)
+            throw new ArgumentException("ProductId is required.", nameof(productId));
+
         if (quantity <= 0)
-            throw new ArgumentException("Quantity must be greater than zero.");
+            throw new ArgumentException("Quantity must be greater than zero.", nameof(quantity));
 
-        if (unitPrice.IsNegative())
-            throw new ArgumentException("Unit price cannot be negative.");
+        // ❌ NO unitPrice negative check here
+        // Money guarantees validity
 
+        Id = Guid.NewGuid();
         ProductId = productId;
         Quantity = quantity;
-        UnitPrice = unitPrice;
+        UnitPrice = unitPrice ?? throw new ArgumentNullException(nameof(unitPrice));
     }
 
     public Money TotalPrice =>
